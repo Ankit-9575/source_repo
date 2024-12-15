@@ -14,5 +14,5 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           repository: Ankit-9575/Dest_repo # Replace with your target repository
-          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
+          token: ${{ secrets.TOKEN }}  # GitHub token for authentication
           event-type: trigger-second-action  # Event name to trigger in the target repository
