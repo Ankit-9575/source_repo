@@ -1,0 +1,18 @@
+name: Trigger Second Action on Merge to Source Branch
+
+on:
+  push:
+    branches:
+      - main  # Change to your source branch if necessary
+
+jobs:
+  trigger_dispatch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger the second action via repository_dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          repository: Ankit-9575/Dest_repo # Replace with your target repository
+          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
+          event-type: trigger-second-action  # Event name to trigger in the target repository
